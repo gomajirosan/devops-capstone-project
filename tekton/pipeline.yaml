@@ -17,10 +17,17 @@ spec:
       default: main
     - name: build-image
   tasks:
-    - name: lint
+    - name: init
       workspaces:
         - name: source
           workspace: pipeline-workspace          
+      taskRef:
+        name: cleanup
+
+    - name: lint
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
       taskRef:
         name: flake8
       params:
