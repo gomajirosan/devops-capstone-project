@@ -16,7 +16,7 @@ spec:
     - name: branch
       default: main
   tasks:
-    - name: init
+    - name: lint
       workspaces:
         - name: source
           workspace: pipeline-workspace          
